@@ -68,7 +68,7 @@ function animate() {
       break;
     case "LEIA1":
       curMeshGroup.rotation.x = 0.8 * Math.sin(5.0 * LEIA.time);
-      curMeshGroup.rotation.z = 0.6 * 0.6 * Math.sin(3.0 * LEIA.time);
+      curMeshGroup.rotation.y = 0.6 * 0.6 * Math.sin(3.0 * LEIA.time);
       break;
     default:
       break;
@@ -84,13 +84,14 @@ function addObjectsToScene() {
   //Add your objects here
   //API to add STL Object
   Leia_LoadSTLModel({
-    path: 'resource/LEIA1.stl'
+//    path: 'resource/LEIA1.stl'
+    path: 'resource/chess.STL'
   }, function (mesh) {
     // mesh.material.side = THREE.DoubleSide;
     mesh.castShadow = true;
     //  mesh.material.metal = true;
     mesh.scale.set(60, 60, 60);
-    mesh.position.set(0, 0, 0);
+    mesh.position.set(0, 0, 10);
     var group = new THREE.Object3D();
     group.add(mesh);
     scene.add(group);
